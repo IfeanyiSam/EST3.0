@@ -99,7 +99,7 @@ resource "aws_key_pair" "app_key" {
 # EC2 Instances
 resource "aws_instance" "app_instance_1" { 
   ami                    = "ami-0e86e20dae9224db8" 
-  instance_type          = "t2.micro"
+  instance_type          = "t2.small"
   subnet_id              = aws_subnet.app_public_subnet_1.id
   vpc_security_group_ids = [aws_security_group.app_web_sg.id]
   key_name               = aws_key_pair.app_key.key_name
@@ -113,7 +113,7 @@ resource "aws_instance" "app_instance_1" {
 
 resource "aws_instance" "app_instance_2" { 
   ami                    = "ami-0e86e20dae9224db8" 
-  instance_type          = "t2.micro"
+  instance_type          = "t2.small"
   subnet_id              = aws_subnet.app_public_subnet_2.id
   vpc_security_group_ids = [aws_security_group.app_web_sg.id]
   key_name               = aws_key_pair.app_key.key_name
