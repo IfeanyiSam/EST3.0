@@ -6,7 +6,7 @@ services:
       context: ./angular-app2
       dockerfile: Dockerfile
     ports:
-      - "80:4200"  
+      - "80:80"  
     container_name: angular-frontend
     depends_on:
       - backend

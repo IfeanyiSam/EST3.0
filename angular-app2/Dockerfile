@@ -1,14 +1,12 @@
-FROM node:18.20.2-alpine
-
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-
-RUN npm install -g @angular/cli
-
+# Stage 1: Build an Angular Docker Image
+FROM node as build
+WORKDIR /app
+COPY package*.json /app/
 RUN npm install
-
-EXPOSE 4200
-
-CMD ["ng", "serve", "--host", "0.0.0.0"]
-
+COPY . /app
+ARG configuration=production
+RUN npm run build --outputPath=./dist/angular-app
+# Stage 2, use the compiled app, ready for production with Nginx
+FROM nginx
+COPY --from=build /app/dist/angular-app /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
