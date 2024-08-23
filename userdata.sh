@@ -17,10 +17,10 @@ sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Clone the repository
-git clone https://github.com/IfeanyiSam/EST2.0.git /home/ubuntu/EST2.0
+git clone https://github.com/IfeanyiSam/EST3.0.git /home/ubuntu/EST2.0
 
 # Navigate to the Node.js app directory
-cd /home/ubuntu/EST2.0 || exit
+cd /home/ubuntu/EST3.0 || exit
 
 docker compose --profile frontend --profile backend up -d
 
