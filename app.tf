@@ -140,7 +140,7 @@ resource "aws_lb_target_group" "app_tg" {
   protocol = "HTTP"
   vpc_id   = aws_vpc.app_vpc.id
   health_check { 
-    path                = "/api/greeting" 
+    path                = "/" 
     protocol            = "HTTP"
     port                = "traffic-port"
     interval            = 30
