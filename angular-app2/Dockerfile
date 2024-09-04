@@ -1,5 +1,5 @@
 # Stage 1: Build an Angular Docker Image
-FROM node as build
+FROM node AS build
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install
