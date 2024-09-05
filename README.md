@@ -26,8 +26,7 @@ This project demonstrates deploying a Node.js application on AWS using Terraform
 
    ```bash
    git clone https://github.com/IfeanyiSam/EST3.0.git 
-
-   cd testexpswp/node-app 
+ 
 
 2. ## Initialization and Management
 
